@@ -17,7 +17,7 @@ int check_cycle(listint_t *list)
 	{
 		simple_node = (*simple_node).next;
 		double_node = (*(*double_node).next).next;
-		
+
 		if (simple_node == double_node)
 			return (1);
 	}
