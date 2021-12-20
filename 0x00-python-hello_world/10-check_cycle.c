@@ -9,19 +9,15 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *slow;
-	listint_t *fast;
+	listint_t *simple_node, *double_node;
 
-	slow = list;
-	fast = list;
+	simple_node = list, double_node = list;
 
-	while (slow && fast && fast->next)
+	for (; simple_node && double_node && double_node->next; simple_node = simple_node->next)
 	{
-		slow = slow->next;
-		fast = fast->next->next;
-
-		if (slow == fast)
+		if (simple_node == double_node)
 			return (1);
+		double_node = double_node->next->next
 	}
 
 	return (0);
