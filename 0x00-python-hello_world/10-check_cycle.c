@@ -13,7 +13,7 @@ int check_cycle(listint_t *list)
 
 	simple_node = list, double_node = list;
 
-	for (; simple_node && double_node && double_node->next simple_node = simple_node->next)
+	for (; simple_node && double_node && double_node->next; simple_node = simple_node->next)
 	{
 		if (simple_node == double_node)
 			return (1);
