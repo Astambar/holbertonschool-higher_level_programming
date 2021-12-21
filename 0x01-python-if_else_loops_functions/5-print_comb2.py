@@ -1,4 +1,7 @@
 #!/usr/bin/python3
-for i in range(ord("a"), ord("z")+1):
-    if(ord("e") != i and ord("e") != i):
-        print("{:s}".format(i), end="")
+char = ""
+for i in range(0, 99):
+    char += '{:d}{:d}'.format(i // 10, i % 10) + ', '
+char += '{:d}{:d}'.format((i + 1) // 10, (i + 1) % 10)
+
+print(char)
