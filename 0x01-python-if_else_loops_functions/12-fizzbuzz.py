@@ -8,4 +8,4 @@ def fizzbuzz():
             string += 'Buzz '
         if i % 3 != 0 and i % 5 != 0:
             string += '{:d} '.format(i)
-    print(string)
+    print(string, end="")
