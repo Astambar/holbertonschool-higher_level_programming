@@ -2,10 +2,11 @@
 if __name__ == "__main__":
     import sys
     lenargv = len(sys.argv) -1
+    print("{:d} ".format(lenargv), end="")
     if lenargv == 0:
-        print("0 arguments.")
+        print("arguments.")
     elif lenargv == 1:
-        print("1 argument:")
+        print("argument:")
         print("1: {:s}".format(sys.argv[1]))
     else:
         print("{:d} argument:".format(lenargv))
