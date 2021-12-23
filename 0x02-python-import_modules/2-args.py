@@ -6,9 +6,9 @@ if __name__ == "__main__":
     if lenargv == 0:
         print("arguments.")
     elif lenargv == 1:
-        print("argument:")
-        print("1: {:s}".format(sys.argv[1]))
+        print("argument:", end="")
+        print("{:d}: {:s}".format(lenargv, sys.argv[1]))
     else:
-        print("{:d} argument:".format(lenargv))
+        print("{:d} arguments:".format(lenargv), end ="")
         for i in range(1, lenargv +1, 1):
             print("{:d}: {:s}".format(i, sys.argv[i]))
