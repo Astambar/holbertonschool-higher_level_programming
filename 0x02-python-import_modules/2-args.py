@@ -3,12 +3,11 @@ if __name__ == "__main__":
     import sys
     lenargv = len(sys.argv) -1
     if lenargv == 0:
-        char = "0 arguments.\n"
+        print("0 arguments.")
     elif lenargv == 1:
-        char = "1 argument:\n"
-        char += "1: {:s}".format(sys.argv[1])
+        print("1 argument:")
+        print("1: {:s}".format(sys.argv[1]))
     else:
-        char = "{:d} argument:\n".format(lenargv)
+        print("{:d} argument:".format(lenargv))
         for i in range(1, lenargv +1, 1):
-            char += "{:d}: {:s}\n".format(i, sys.argv[i])
-    print(char, end="")
+            print("{:d}: {:s}".format(i, sys.argv[i]))
