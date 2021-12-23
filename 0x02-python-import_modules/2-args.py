@@ -2,13 +2,14 @@
 if __name__ == "__main__":
     import sys
     lenargv = len(sys.argv) - 1
-    print("{} ".format(lenargv), end="")
+    char = "{:d} ".format(lenargv)
     if lenargv == 0:
-        print("arguments.")
+        char += "arguments.\n"
     elif lenargv > 1:
-        print("arguments:")
+        char += "arguments:\n"
         for i in range(1, lenargv + 1, 1):
-            print("{}: {}".format((i), sys.argv[i]))
+            char += "{}: {}\n".format((i), sys.argv[i])
     else:
-        print("argument:")
-        print("1: {}".format(sys.argv[1]))
+        char += "argument:\n"
+        char += "1: {}\n".format(sys.argv[1])
+    print(char, end="")
