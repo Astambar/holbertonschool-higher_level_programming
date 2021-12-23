@@ -3,7 +3,7 @@ if __name__ == "__main__":
     import sys
     lenargv = len(sys.argv) -1
     if lenargv == 0:
-        char = "0 arguments."
+        char = "0 arguments.\n"
     elif lenargv == 1:
         char = "1 argument:\n"
         char += "1: {:s}".format(sys.argv[1])
