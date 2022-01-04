@@ -31,7 +31,7 @@ int is_palindrome(listint_t **head)
 		count++;
 		phead = (*phead).next;
 	}
-	calcul /= 2;
+	calcul = count / 2;
 
 	while (calcul)
 	{
