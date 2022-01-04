@@ -18,7 +18,7 @@ int is_palindrome(listint_t **head)
 		return (1);
 	phead = *head;
 	if (phead)
-		for (;phead->next; phead = phead->next, count++)
+		for (;(*phead).next; phead = (*phead).next, count++)
 		;
 	buffer = malloc(sizeof(int) * count);
 	if (!buffer)
@@ -26,20 +26,14 @@ int is_palindrome(listint_t **head)
 
 	phead = *head;
 	count = 0;
-	while (phead)
-	{
-		buffer[count] = (*phead).n;
-		count++;
-		phead = (*phead).next;
-	}
+	while (phead && (*phead).next)
+		buffer[count] = (*phead).n, count++, phead = (*phead).next;
+
 	calcul = count / 2;
 
-	while (calcul)
-	{
+	for (;calcul; calcul--, count2++, count--)
 		if (buffer[count2] != buffer[count - 1])
 			return (0);
-		calcul--, count2++, count--;
-	}
 	free(buffer);
 	return (1);
 }
