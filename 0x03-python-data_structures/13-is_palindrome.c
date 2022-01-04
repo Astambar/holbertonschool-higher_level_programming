@@ -2,44 +2,50 @@
 #include <stdlib.h>
 #include <stdio.h>
 /*
- * is_palindrome - fonctio à un seul argument
+ * is_palindrome - function with one argument
  * @head: pointer to linked list
- * Return: 1 si c'est vrais sinon 0
+ *
+ * Description: check if value singly linked list is palindrome
+ * Return: 1 if true or 0 if false
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *phead;
-	int count = 0, count2 = 0, calcul;
-	int *buffer = NULL;
+	listint_t *ptr;
+	int count = 0, count2 = 0, half;
+	int *buf = NULL;
 
 	if (!head)
 	      return (0);
 	if (!*head)
 		return (1);
-	phead = *head;
-if(phead)
-	for (,phead->next)
-		phead = phead->next, count++;
-	buffer = malloc(sizeof(int) * count);
-	if (!buffer)
+	ptr = *head;
+	while (ptr && ptr->next)
+	{
+		ptr = ptr->next;
+		count++;
+	}
+	buf = malloc(sizeof(int) * count);
+	if (!buf)
 		return (0);
 
-	phead = *head;
+	ptr = *head;
 	count = 0;
-	while (phead)
+	while (ptr)
 	{
-		buffer[count] = (*phead).n;
+		buf[count] = ptr->n;
 		count++;
-		phead = (*phead).next;
+		ptr = ptr->next;
 	}
-	calcul /= 2;
+	half = count / 2;
 
-	while (calcul)
+	while (half)
 	{
-		if (buffer[count2] != buffer[count - 1])
+		if (buf[count2] != buf[count - 1])
 			return (0);
-		calcul--, count2++, count--;
+		half--;
+		count2++;
+		count--;
 	}
-	free(buffer);
+	free(buf);
 	return (1);
 }
