@@ -26,8 +26,9 @@ int is_palindrome(listint_t **head)
 
 	phead = *head;
 	count = 0;
-	while ((*phead).next)
+	while (phead)
 		buffer[count] = (*phead).n, count++, phead = (*phead).next;
+
 	calcul = count / 2;
 
 	for (;calcul; calcul--, count2++, count--)
