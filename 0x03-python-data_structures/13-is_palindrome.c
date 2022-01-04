@@ -18,8 +18,8 @@ int is_palindrome(listint_t **head)
 		return (1);
 	phead = *head;
 	if (phead)
-		for (;phead->next;)
-			phead = phead->next, count++;
+		for (;phead->next; phead = phead->next, count++)
+		;
 	buffer = malloc(sizeof(int) * count);
 	if (!buffer)
 		return (0);
