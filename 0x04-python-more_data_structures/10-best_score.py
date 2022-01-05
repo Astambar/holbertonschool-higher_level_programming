@@ -5,5 +5,5 @@ def best_score(a_dictionary):
     keys = list(a_dictionary.keys())
     maxnumber = keys[0]
     for num in keys:
-        maxnumber = num if a_dictionary[num] > a_dictionary[maxnumber] else maxnumber
+        maxnum = num if a_dictionary[num] > a_dictionary[maxnum] else maxnum
     return maxnumber
