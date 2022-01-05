@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-def roman_to_int(roman_string):
-    if not roman_string:
-        return None
-    num = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+def roman_to_int(roma_string):
+    if roman_string is None or isinstance(roman_string, str) is False:
+        return 0
+    letters = {'I': 1, 'V': 5,  'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    reverse_num = roman_string[::-1]
+    maxchar = 'I'
     total = 0
-    prev_val = 0
-    for i in range(len(roman_string)):
-        for key, val in num.items():
-            if key == roman_string[i]:
-                total += val
-                if prev_val < val:
-                    total -= (prev_val * 2)
-                    prev_val = val
+    for i in reverse_num:
+        if letters[i] >= letters[maxchar]:
+            maxchar = i
+            total += letters[i]
+        else:
+            total -= letters[i]
     return total
