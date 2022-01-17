@@ -1,16 +1,15 @@
 #!/usr/bin/python3
 def safe_print_list_integers(my_list=[], x=0):
-    increment = 0
-    string = ""
+    count = 0
     for i in range(x):
         try:
-            string += "{:d}".format(my_list[i])
-            increment += 1
-        except (TypeError, ValueError):
+            print("{:d}".format(my_list[i]), end="")
+            count += 1
+        except (ValueError, TypeError):
             continue
-    print(string)
-    return (increment)
-my_list = [1, 2, 3, 4, 5, 8]
+    print()
+    return count
+my_list = [1, 2, 3, 4, 5]
 
 nb_print = safe_print_list_integers(my_list, 2)
 print("nb_print: {:d}".format(nb_print))
