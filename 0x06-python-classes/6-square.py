@@ -131,9 +131,9 @@ class Square:
         """
         string = ""
         if self.__size == 0:
-            print()
+            string += "\n"
         for y in range(0, self.__position[1]):
-            print()
+            string += "\n"
         for i in range(0, self.__size):
             for x in range(0, self.__position[0]):
                 string += " "
