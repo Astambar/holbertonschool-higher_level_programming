@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-""" Random"""
+""" module documentation. """
 
 
 class Square:
-    """ Represents an empty square."""
+    """ classe square sans définition."""
     pass
