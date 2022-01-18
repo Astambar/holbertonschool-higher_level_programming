@@ -9,5 +9,5 @@ class Square:
     """
 
     def __init__(self, size):
-        """Initializes the data."""
+        """Initialise la classe Square"""
         self.__size = size
