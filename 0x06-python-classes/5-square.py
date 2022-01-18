@@ -3,27 +3,27 @@
 
 
 class Square:
-    """Represents a square.
-    Private instance attribute: size:
-        - property def size(self)
-        - property setter def size(self, value)
-    Instantiation with optional size.
-    Public instance method: def area(self).
-    Public instance method: def my_print(self).
+    """Représente un carré.
+    Attribut d'instance privée : size :
+        - Taille de la propriété (self)
+        - Pour modifier la taille def size(self, value)
+    Instanciation avec taille par default.
+    Méthode d'instance publique : def area(self).
+    Méthode d'instance publique : def my_print(self).
     """
 
     def __init__(self, size=0):
-        """Initializes the data."""
+        """Initialise la classe Square"""
         self.__size = size
 
     @property
     def size(self):
-        """Retrieves the size."""
+        """Récupére la taille du carrée"""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Sets the size to a value."""
+        """Définit la nouvelle de taille du carrée"""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -31,11 +31,13 @@ class Square:
         self.__size = value
 
     def area(self):
-        """Returns the current square area."""
+        """Retourne la surface du carrée"""
         return self.__size ** 2
 
     def my_print(self):
-        """Prints to stdout the square with the character #."""
+        """Imprime sur la sortie standard
+        le carré avec le caractère #.
+        """
         string = ""
         if self.__size == 0:
             print()
