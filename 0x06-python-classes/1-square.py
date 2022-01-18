@@ -3,9 +3,9 @@
 
 
 class Square:
-    """Represents a square.
-    Private instance attribute: size.
-    Instantiation with size (no type/value verification).
+    """Représente un carré.
+    Attribut d'instance privée : size.
+    Instanciation avec taille (pas de vérification type/valeur).
     """
 
     def __init__(self, size):
