@@ -141,4 +141,4 @@ class Square:
                 string += "#"
             if i < self.__size:
                 string += '\n'
-        print(string)
+        print(string, end="")
