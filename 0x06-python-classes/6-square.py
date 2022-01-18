@@ -70,7 +70,7 @@ class Square:
                 for j in range(0, self.__size):
                     string += "#"
                 string += "\n"
-            print(string, end="")
+        print(string, end="")
 
 my_square_1 = Square(3)
 my_square_1.my_print()
