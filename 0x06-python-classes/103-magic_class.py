@@ -4,7 +4,7 @@ import math
 
 
 class MagicClass:
-    """AI is creating summary for 
+    """AI is creating summary for
 
     Raises:
         TypeError: [description]
