@@ -5,11 +5,36 @@
 
 
 class Rectangle:
-    """Defines a reactangle"""
+    """[summary]
+
+    Raises:
+        TypeError: [description]
+        ValueError: [description]
+        TypeError: [description]
+        ValueError: [description]
+        TypeError: [description]
+        ValueError: [description]
+        TypeError: [description]
+        ValueError: [description]
+
+    Returns:
+        [type]: [description]
+    """
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
-        """Initializing of instance data"""
+        """[summary]
+
+        Args:
+            width (int, optional): [description]. Defaults to 0.
+            height (int, optional): [description]. Defaults to 0.
+
+        Raises:
+            TypeError: [description]
+            ValueError: [description]
+            TypeError: [description]
+            ValueError: [description]
+        """
         if not isinstance(width, (int, float)):
             raise TypeError("width must be an integer")
         if width < 0:
@@ -23,7 +48,11 @@ class Rectangle:
         Rectangle.number_of_instances += 1
 
     def __str__(self):
-        """Prints rectangle using `#` character"""
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         string = []
         if self.__width == 0 or self.__height == 0:
             return ""
@@ -35,27 +64,48 @@ class Rectangle:
         return "".join(string)
 
     def __repr__(self):
-        """Prints string representation of Rectangle"""
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
-        """Prints a string when instane being deleted"""
+        """[summary]
+        """
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
     @property
     def width(self):
-        """Retrieves the value of `width`"""
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return self.__width
 
     @property
     def height(self):
-        """Retrieves the value of `height`"""
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return self.__height
 
     @width.setter
     def width(self, value):
-        """Sets the value of atribute `width` to new value"""
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+
+        Raises:
+            TypeError: [description]
+            ValueError: [description]
+        """
         if not isinstance(value, (int, float)):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -64,7 +114,15 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """Sets the value of atribute `height` to new value"""
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+
+        Raises:
+            TypeError: [description]
+            ValueError: [description]
+        """
         if not isinstance(value, (int, float)):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -72,11 +130,19 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Calculates the area of a reactangle"""
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return (self.__width * self.__height)
 
     def perimeter(self):
-        """Calculates the perimeter of a reactangle"""
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         if self.__width == 0 or self.__height == 0:
             return 0
         return ((self.__width + self.__height) * 2)
