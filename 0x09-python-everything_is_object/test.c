@@ -7,7 +7,7 @@ FILE *files[numfiles];
 for (int i = 0; i <= numfiles; i++)
 {
     char filename[30];
-    sprintf(filename, "%d-answer.txt", i);
+    sprintf(filename, "%d -answer.txt", i);
 	if(!(files[i] = fopen(filename, "r"))){
 		files[i] = fopen(filename, "w");
 	}
