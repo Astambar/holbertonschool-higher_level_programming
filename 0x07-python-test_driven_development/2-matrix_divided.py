@@ -34,7 +34,9 @@ def matrix_divided(matrix, div):
         inner_list = []
         for items in lists:
             if not isinstance(items, (int, float)):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError(
+                    "matrix must be a matrix (list of lists)",
+                    " of integers/floats")
             else:
                 inner_list.append(round(items / div, 2))
         res_matrix.append(inner_list)

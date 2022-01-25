@@ -2,6 +2,7 @@
 """[summary]
 """
 
+
 def max_integer(list=[]):
     """[summary]
 
@@ -11,6 +12,7 @@ def max_integer(list=[]):
     Returns:
         [type]: [description]
     """
+
     if len(list) == 0:
         return None
     result = list[0]
