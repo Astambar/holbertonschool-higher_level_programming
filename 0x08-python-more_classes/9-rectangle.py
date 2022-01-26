@@ -107,4 +107,4 @@ class Rectangle:
         """Creates a new `Rectangle` instance"""
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
-        return cls(size, size)
+        return Rectangle(size, size)
