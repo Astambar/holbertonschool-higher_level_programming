@@ -1,131 +1,133 @@
-The ``7-base_geometry`` module
-======================
+========================================
+  Documentation of 7-base_geometry.py
+========================================
 
-Using ``BaseGeometry`` class
--------------------
+Contains a `BaseGeometry` class with the following methods
 
-Import ``BaseGeometry`` from the ``7-base_geometry`` module:
+`def area(self):`
 
-	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+which calculates the area of the `BaseGeometry`
 
-Test object initialization with argument as integer 0:
+`def integer_validator(self, name, value):`
 
-	>>> shape = BaseGeometry(0)
-	Traceback (most recent call last):
-	TypeError: object() takes no parameters
+validates the `value` based
 
-Test object initialization with argument as integer 1:
+Test cases
+==========
 
-	>>> shape = BaseGeometry(1)
-	Traceback (most recent call last):
-	TypeError: object() takes no parameters
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
 
-Test object initialization with argument as string:
+Case with a positive value
 
-	>>> shape = BaseGeometry("string")
-	Traceback (most recent call last):
-	TypeError: object() takes no parameters
+>>> bg.integer_validator("my_int", 12)
+>>>
 
-Test object initialization with two arguments:
+Case with a negative value
 
-	>>> shape = BaseGeometry("string", 1)
-	Traceback (most recent call last):
-	TypeError: object() takes no parameters
+>>> bg.integer_validator("distance", -4)
+Traceback (most recent call last):
+ValueError: distance must be greater than 0
 
+Case with a float
 
-Test `area` function with no arguments:
+>>> bg.integer_validator("year", 8.5)
+Traceback (most recent call last):
+TypeError: year must be an integer
 
-	>>> shape = BaseGeometry()
-	>>> shape.area()
-	Traceback (most recent call last):
-	Exception: area() is not implemented
+Case with zero
 
-Test `area` function with one argument:
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+ValueError: age must be greater than 0
 
-	>>> shape = BaseGeometry()
-	>>> shape.area(1)
-	Traceback (most recent call last):
-	TypeError: area() takes 1 positional argument but 2 were given
+Case with a non integer
 
-Test `area` function with one argument as none int:
+>>> bg.integer_validator("name", "A!ex")
+Traceback (most recent call last):
+TypeError: name must be an integer
 
-	>>> shape= BaseGeometry()
-	>>> shape.area("not int")
-	Traceback (most recent call last):
-	TypeError: area() takes 1 positional argument but 2 were given
+Case with value as boolean
 
-Test `integer_validator` function with no arguments:
+>>> bg.integer_validator("width", True)
+Traceback (most recent call last):
+TypeError: width must be an integer
 
-	>>> shape = BaseGeometry()
-	>>> shape.integer_validator()
-	Traceback (most recent call last):
-	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+Case catched output with string value
 
-Test `integer_validator` function with one argument:
+>>> try:
+...     bg.integer_validator("name", "John")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[TypeError] name must be an integer
 
-	>>> shape = BaseGeometry()
-	>>> shape.integer_validator("shape")
-	Traceback (most recent call last):
-	TypeError: integer_validator() missing 1 required positional argument: 'value'
+Case catched output with 0 as value
 
-Test `integer_validator` function with two arguments:
+>>> try:
+...     bg.integer_validator("age", 0)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[ValueError] age must be greater than 0
 
-	>>> shape = BaseGeometry()
-	>>> shape.integer_validator("shape", 10)
+Case with negative value
 
-Test `integer_validator` function with three arguments:
+>>> try:
+...     bg.integer_validator("distance", -4)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[ValueError] distance must be greater than 0
 
-	>>> shape = BaseGeometry()
-	>>> shape.integer_validator("shape", 10, 20)
-	Traceback (most recent call last):
-	TypeError: integer_validator() takes 3 positional arguments but 4 were given
+Case with float value
 
-Test `integer_validator` function with `value` argument as non int:
+>>> try:
+...     bg.integer_validator("distance", 4.5)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[TypeError] distance must be an integer
 
-	>>> shape= BaseGeometry()
-	>>> shape.integer_validator("shape", 1.1)
-	Traceback (most recent call last):
-	TypeError: shape must be an integer
+Case with calling area function
 
+>>> bg.integer_validator("my_int", 12)
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
 
-	>>> shape.integer_validator()
-	Traceback (most recent call last):
-	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+Case with None as value
 
-	>>> shape.integer_validator("age")
-	Traceback (most recent call last):
-	TypeError: integer_validator() missing 1 required positional argument: 'value'
+>>> bg.integer_validator("age", None)
+Traceback (most recent call last):
+TypeError: age must be an integer
 
-	>>> shape.integer_validator("age", 1)
+Case without any arguments
 
-	>>> shape.integer_validator("age", 0)
-	Traceback (most recent call last):
-	ValueError: age must be greater than 0
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-	>>> shape.integer_validator("age", -4)
-	Traceback (most recent call last):
-	ValueError: age must be greater than 0
+Case without value
 
-	>>> shape.integer_validator("age", "4")
-	Traceback (most recent call last):
-	TypeError: age must be an integer
+>>> bg.integer_validator("year")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-	>>> shape.integer_validator("age", (4,))
-	Traceback (most recent call last):
-	TypeError: age must be an integer
+Case with an array as value
 
-	>>> shape.integer_validator("age", [3])
-	Traceback (most recent call last):
-	TypeError: age must be an integer
+>>> bg.integer_validator("day", [7, 3, 5])
+Traceback (most recent call last):
+TypeError: day must be an integer
 
-	>>> shape.integer_validator("age", True)
-	Traceback (most recent call last):
-	TypeError: age must be an integer
+Case with a tuple
 
-	>>> shape.integer_validator("age", {3, 4})
-	Traceback (most recent call last):
-	TypeError: age must be an integer
+>>> bg.integer_validator("day", (7, 3, 5))
+Traceback (most recent call last):
+TypeError: day must be an integer
 
-	>>> shape.integer_validator("age", None)
-	Traceback (most recent call last):
-	TypeError: age must be an integer
+Case with a dictionary
+
+>>> bg.integer_validator("month", {"Jan", "Feb", "Mar"})
+Traceback (most recent call last):
+TypeError: month must be an integer
