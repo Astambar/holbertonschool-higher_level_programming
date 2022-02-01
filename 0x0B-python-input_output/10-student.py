@@ -12,15 +12,9 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        # sourcery skip: dict-comprehension, inline-immediately-returned-variable
+
         """ returns the dictionary """
         if attrs is None:
             return self.__dict__
-    
-        new_aux = {}
-
-        for key in attrs:
-            if key in self.__dict__:
-                new_aux[key] = self.__dict__[key]
-
-        return new_aux
+        return {key: self.__dict__[key]
+                for key in attrs if key in self.__dict__}
