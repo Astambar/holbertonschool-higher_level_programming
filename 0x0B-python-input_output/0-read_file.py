@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+"""" This function have a reads file """
 
 
 def read_file(filename=""):
-    with open(filename, encoding='UTF-8') as file:
-        print(file.read(), end="")
+    """ read the text file """
+    with open(filename, mode="r", encoding="utf-8") as read_file:
+        print(read_file.read(), end="")
