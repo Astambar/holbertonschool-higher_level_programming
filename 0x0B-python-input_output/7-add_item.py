@@ -8,7 +8,7 @@ filename = 'add_item.json'
 
 try:
     a = load_from_json_file(filename)
-except:
+except load_from_json_file(filename).DoesNotExist:
     a = []
 finally:
     a.extend(argv[1:])
