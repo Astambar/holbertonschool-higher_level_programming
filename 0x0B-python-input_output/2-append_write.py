@@ -1,18 +1,8 @@
 #!/usr/bin/python3
+""" This function have a append_file"""
 
 
-def read_lines(filename="", nb_lines=0):
-    with open(filename, encoding="UTF-8") as file:
-        if nb_lines <= 0:
-            print(file.read(), end="")
-            return
-        i = sum(1 for _ in file)
-        file.seek(0)
-        if nb_lines >= i:
-            print(file.read(), end="")
-            return
-        else:
-            i = 0
-            while i < nb_lines:
-                print(file.readline(), end="")
-                i += 1
+def append_write(filename="", text=""):
+    """ write this """
+    with open(filename, mode="a", encoding="utf-8") as append_write:
+        return append_write.write(text)

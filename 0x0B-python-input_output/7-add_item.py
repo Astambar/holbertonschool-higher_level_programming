@@ -1,10 +1,15 @@
 #!/usr/bin/python3
+""" This function have a save_to_json_file """
+from sys import argv
 
+save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
+load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
+filename = 'add_item.json'
 
-import json
-
-
-def save_to_json_file(my_obj, filename):
-
-    with open(filename, "w") as file:
-        json.dump(my_obj, file)
+try:
+    a = load_from_json_file(filename)
+except:
+    a = []
+finally:
+    a.extend(argv[1:])
+    save_to_json_file(a, filename)

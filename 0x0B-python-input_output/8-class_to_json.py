@@ -1,9 +1,7 @@
 #!/usr/bin/python3
+""" This function have a class_to_json """
 
 
-import json
-
-
-def load_from_json_file(filename):
-    with open(filename) as file:
-        return json.load(file)
+def class_to_json(obj):
+    """ returns the dictionary """
+    return obj.__dict__
