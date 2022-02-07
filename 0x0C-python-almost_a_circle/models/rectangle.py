@@ -84,3 +84,124 @@ class Rectangle(Base):
             raise ValueError("{:s} must be > 0".format(name))
         if name in ["x", "y"] and value < 0:
             raise ValueError("{:s} must be >= 0".format(name))
+
+    def area(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
+        return self.height * self.width
+
+    def display(self):
+        """[summary]
+        """
+        for y in range(self.y):
+            print()
+
+        for j in range(self.height):
+            for _ in range(self.x):
+                print(" ", end='')
+            for _ in range(self.width):
+                print("#", end='')
+            if j < self.height - 1:
+                print()
+        print()
+
+    def update(self, *args, **kwargs):
+        """[summary]
+        """
+        rectangle_list = ["id", "width", "height", "x", "y", "\0"]
+
+        for i in range(len(args)):
+            setattr(self, rectangle_list[i], args[i])
+
+        if not args:
+            for i, Value in kwargs.items():
+                if i in rectangle_list:
+                    setattr(self, i, kwargs[i])
+
+    def to_dictionary(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
+        return {'id': self.id, "width": self.width, 'height': self.height,
+                'x': self.x, 'y': self.y}
+
+    @property
+    def width(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+        """
+        self.check_value("width", value)
+        self.__width = value
+
+    @property
+    def height(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+        """
+        self.check_value("height", value)
+        self.__height = value
+
+    @property
+    def x(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
+        return self.__x
+
+    @x.setter
+    def x(self, value):
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+        """
+        self.check_value("x", value)
+        self.__x = value
+
+    @property
+    def y(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
+        return self.__y
+
+    @y.setter
+    def y(self, value):
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+        """
+        self.check_value("y", value)
+        self.__y = value
