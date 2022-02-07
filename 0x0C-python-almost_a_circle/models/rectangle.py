@@ -9,41 +9,16 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """
-    this is the Rectangle class
-    Functions:
-        __init__: init a rectangle
-        __str__: print the Rectangle as:
-            [Rectangle] (<id>) <x>/<y> - <width>/<height>
-        check_value: function that check if value has good parameters
-        area: function that returns the Rectangle area
-        display: function that print the Rectangle with the character #
-            by taking care of x and y
-        update: assigns an argument to each attribute
-        to_dictionary: function that returns the dictionary representation
-            of a Rectangle
-    Getter:
-        width: access to width
-        height: access to height
-        x: access to x
-        y: access to y
-    Setter:
-        width: change the width
-        height: change the height
-        x: change the x
-        y: change the y
-    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """
-        init a rectangle
-        Arguments:
-            width: width of the Rectangle
-            height: height of the Rectangle
-            x: x of the Rectangle
-            y: y of the Rectangle
-        Returns:
-            None
+        """[summary]
+
+        Args:
+            width ([type]): [description]
+            height ([type]): [description]
+            x (int, optional): [description]. Defaults to 0.
+            y (int, optional): [description]. Defaults to 0.
+            id ([type], optional): [description]. Defaults to None.
         """
         super().__init__(id)
         self.width = width
