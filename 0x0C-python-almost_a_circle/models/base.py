@@ -28,6 +28,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """[summary]
@@ -38,7 +39,8 @@ class Base:
         Returns:
             [type]: [description]
         """
-        return "[]" if list_dictionaries is None else json.dumps(list_dictionaries)
+        return "[]" if list_dictionaries is None else json.dumps(
+                                                list_dictionaries)
 
 
 if __name__ == "__main__":
