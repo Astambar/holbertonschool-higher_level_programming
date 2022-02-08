@@ -29,6 +29,32 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """[summary]
+
+        Args:
+            list_objs ([type]): [description]
+        """
+
+
+        if list_objs is None:
+            list_objs = []
+
+        with open(cls.__name__ + ".csv", "w") as fd:
+            if list_objs is None or list_objs == []:
+                fd.write("")
+            else:
+                if cls.__name__ == "Rectangle":
+                    write_list = ["id", "width", "height", "x", "y", "\0"]
+                elif cls.__name__ == "Square":
+                    write_list = ["id", "size", "x", "y", "\0"]
+
+                list_dict = csv.DictWriter(fd, fieldnames=write_list)
+                for obj in list_objs:
+                    list_dict.writerow(obj.to_dictionary())
+
+        fd.close()
 
     @classmethod
     def load_from_file_csv(cls):
