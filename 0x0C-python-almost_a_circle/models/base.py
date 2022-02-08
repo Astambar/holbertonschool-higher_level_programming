@@ -90,7 +90,6 @@ class Base:
             list_objs ([type]): [description]
         """
 
-
         if list_objs is None:
             list_objs = []
 
