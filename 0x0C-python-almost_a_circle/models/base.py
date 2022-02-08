@@ -42,6 +42,18 @@ class Base:
         return "[]" if list_dictionaries is None else json.dumps(
                                                 list_dictionaries)
 
+    @staticmethod
+    def from_json_string(json_string):
+        """[summary]
+
+        Args:
+            json_string ([type]): [description]
+
+        Returns:
+            [type]: [description]
+        """
+        return [] if json_string in [None, ""] else json.loads(json_string)
+
 
 if __name__ == "__main__":
 
