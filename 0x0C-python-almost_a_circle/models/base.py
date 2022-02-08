@@ -29,6 +29,42 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
+        list_instance = []
+
+        if exists(cls.__name__ + ".csv"):
+            with open(cls.__name__ + ".csv", "r") as fd:
+                list_csv = csv.reader(fd)
+                for i in list_csv:
+                    if cls.__name__ == "Rectangle":
+                        new = {
+                            "id": int(i[0]),
+                            "width": int(i[1]),
+                            "height": int(i[2]),
+                            "x": int(i[3]),
+                            "y": int(i[4])
+                        }
+
+                    if cls.__name__ == "Square":
+                        new = {
+                            "id": int(i[0]),
+                            "size": int(i[1]),
+                            "x": int(i[2]),
+                            "y": int(i[3])
+                        }
+
+                    new_instance = cls.create(**new)
+                    list_instance.append(new_instance)
+
+        return list_instance
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """[summary]
