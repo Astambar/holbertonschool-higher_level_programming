@@ -89,6 +89,9 @@ class Base:
         Args:
             list_objs ([type]): [description]
         """
+        rectangle_list = ["id", "width", "height", "x", "y", "\0"]
+        square_list = ["id", "size", "x", "y", "\0"]
+        write_list = ""
 
         if list_objs is None:
             list_objs = []
@@ -98,9 +101,9 @@ class Base:
                 fd.write("")
             else:
                 if cls.__name__ == "Rectangle":
-                    write_list = ["id", "width", "height", "x", "y", "\0"]
+                    write_list = rectangle_list
                 elif cls.__name__ == "Square":
-                    write_list = ["id", "size", "x", "y", "\0"]
+                    write_list = square_list
 
                 list_dict = csv.DictWriter(fd, fieldnames=write_list)
                 for obj in list_objs:
