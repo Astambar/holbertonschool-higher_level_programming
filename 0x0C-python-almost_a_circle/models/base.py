@@ -30,6 +30,59 @@ class Base:
             self.id = Base.__nb_objects
 
     @classmethod
+    def save_to_file(cls, list_objs):
+        """[summary]
+
+        Args:
+            list_objs ([type]): [description]
+        """
+        string = ""
+
+        if list_objs is None:
+            list_objs = []
+
+        dict = [obj.to_dictionary() for obj in list_objs]
+
+        string = cls.to_json_string(dict)
+
+        with open(cls.__name__ + ".json", "w") as fd:
+            fd.write(string)
+        fd.close()
+
+    @classmethod
+    def create(cls, **dictionary):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
+        new = cls(1, 1) if cls.__name__ == "Rectangle" else cls(1)
+
+        new.update(**dictionary)
+
+        return new
+
+    @classmethod
+    def load_from_file(cls):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
+        list_json = []
+        list_instance = []
+
+        if exists(cls.__name__ + ".json"):
+            with open(cls.__name__ + ".json") as fd:
+                list_json = cls.from_json_string(fd.read())
+            fd.close()
+
+            for i in list_json:
+                list_instance.append(cls.create(**i))
+
+        return list_instance
+
+    @classmethod
     def save_to_file_csv(cls, list_objs):
         """[summary]
 
