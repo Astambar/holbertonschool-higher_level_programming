@@ -51,31 +51,3 @@ class Square(Rectangle):
 
         for k, v in kwargs.items():
             setattr(self, k, v)
-
-    def to_dictionary(self):
-        """[summary]
-
-        Returns:
-            [type]: [description]
-        """
-        return {'id': self.id, 'x': self.x, 'y': self.y, 'size': self.size}
-
-    @property
-    def size(self):
-        """[summary]
-
-        Returns:
-            [type]: [description]
-        """
-        return self.width
-
-    @size.setter
-    def size(self, value):
-        """[summary]
-
-        Args:
-            value ([type]): [description]
-        """
-        self.check_value("width", value)
-        self.width = value
-        self.height = value
