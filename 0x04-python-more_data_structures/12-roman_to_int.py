@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def roman_to_int(roma_string):
-    if roma_string is None or isinstance(roma_string, str) is False:
+    if roma_string is None or not isinstance(roma_string, str):
         return 0
     roman_number = {
                 'I': 1,
