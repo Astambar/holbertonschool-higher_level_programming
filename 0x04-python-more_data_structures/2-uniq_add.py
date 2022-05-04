@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""function that returns a set of common elements in two sets
+"""fonction  d'addition de nombre de la liste (de façon unique)
     Return:
-        the addition of all unique elemnts
+        addition de nombre unique
 """
 
 
