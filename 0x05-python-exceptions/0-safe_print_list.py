@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-import contextlib
-
 def safe_print_list(my_list=[], x=0):
+    increment = 0
     string = ""
-    with contextlib.suppress(IndexError):
+    try:
         for i in range(x):
-            string += f"{my_list[i]}"
-
+            string += "{}".format(my_list[i])
+            increment += 1
+    except IndexError:
+        pass
     print(string)
     return increment
