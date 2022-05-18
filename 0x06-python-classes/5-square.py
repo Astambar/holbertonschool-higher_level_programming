@@ -38,7 +38,7 @@ class Square:
         """Imprime sur la sortie standard
         le carré avec le caractère #.
         """
-        
+
         if self.__size == 0:
             print()
         else:
