@@ -36,7 +36,6 @@ class Rectangle:
                 string.append(self.print_symbol)
             if i < (self.__height - 1):
                 string.append("\n")
-        string.append("\nBye rectangle...")
         return "".join(string)
 
     def __repr__(self):
@@ -45,8 +44,8 @@ class Rectangle:
 
     def __del__(self):
         """Prints a string when instane being deleted"""
-        print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
 
     @property
     def width(self):
