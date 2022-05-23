@@ -36,6 +36,7 @@ class Rectangle:
                 string.append(self.print_symbol)
             if i < (self.__height - 1):
                 string.append("\n")
+        string.append("\nBye rectangle...")
         return "".join(string)
 
     def __repr__(self):
