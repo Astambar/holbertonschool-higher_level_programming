@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-"""_summary_
 
-Returns:
-	_type_: _description_
 """
-
+Answer to the N queens puzzle
+"""
 
 import sys
 
@@ -78,7 +76,9 @@ if __name__ == "__main__":
             cleartableResult(x)
             if possible(x, y):
                 tableResult[x][1] = y
-                print(tableResult) if (x == numberQueen - 1) else nqueens(x + 1)
-                    
+                if (x == numberQueen - 1):
+                    print(tableResult)
+                else:
+                    nqueens(x + 1)
 
     nqueens(0)
