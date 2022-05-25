@@ -1,96 +1,103 @@
 #!/usr/bin/python3
-"""Rectangle class file"""
+"""
+    Module contains of a single class
+"""
 
 
 class Rectangle:
+    """[summary]
     """
-    class Rectangle that defines a Rectangle
-    Atributes:
-        __width: the width of the Rectangle
-        __height: the height of the Rectangle
-    Functions:
-        __init__: initialise a Rectangle
-        area: returns the Rectangle area
-        perimeter: returns the Rectangle perimeter
-    @property
-        width: access to width
-        height: access to height
-    @atribute.setter
-        width: change the width
-        height: change the height
-    """
+
     def __init__(self, width=0, height=0):
-        """
-        Init a Rectangle
+        """[summary]
+
         Args:
-            width (int): width of the Rectangle
-            height (tuple): height of the Rectangle
-        Returns: None
+            width (int, optional): [description]. Defaults to 0.
+            height (int, optional): [description]. Defaults to 0.
+
+        Raises:
+            TypeError: [description]
+            ValueError: [description]
+            TypeError: [description]
+            ValueError: [description]
         """
-        self.height = height
-        self.width = width
+        if not isinstance(width, (int, float)):
+            raise TypeError("width must be an integer")
+        if width < 0:
+            raise ValueError("width must be >= 0")
+        if not isinstance(height, (int, float)):
+            raise TypeError("height must be an integer")
+        if height < 0:
+            raise ValueError("height must be >= 0")
+        self.__width = width
+        self.__height = height
 
     @property
     def width(self):
-        """
-        access to width
-        Returns: the width of the Rectangle
+        """[summary]
+
+        Returns:
+            [type]: [description]
         """
         return self.__width
 
-    @width.setter
-    def width(self, value):
-        """
-        change the width
-        args:
-            value: value of the new width
-        Returns: None
-        """
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-
-        if value < 0:
-            raise ValueError("width must be >= 0")
-
-        self.__width = value
-
     @property
     def height(self):
-        """
-        access to height
-        Returns: the height of the Rectangle
+        """[summary]
+
+        Returns:
+            [type]: [description]
         """
         return self.__height
 
+    @width.setter
+    def width(self, value):
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+
+        Raises:
+            TypeError: [description]
+            ValueError: [description]
+        """
+        if not isinstance(value, (int, float)):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
+
     @height.setter
     def height(self, value):
-        """
-        change the height
-        args:
-            value: value of the new height
-        Returns: None
-        """
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
+        """[summary]
 
+        Args:
+            value ([type]): [description]
+
+        Raises:
+            TypeError: [description]
+            ValueError: [description]
+        """
+        if not isinstance(value, (int, float)):
+            raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-
         self.__height = value
 
     def area(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
         """
-        returns the Rectangle area
-        Returns: the Rectangle area
-        """
-        return self.__height * self.__width
+        return (self.__width * self.__height)
 
     def perimeter(self):
-        """
-        returns the Rectangle perimeter
-        Returns: the Rectangle perimeter
+        """[summary]
+
+        Returns:
+            [type]: [description]
         """
         if self.__width == 0 or self.__height == 0:
             return 0
-
-        return 2 * (self.__height + self.__width)
+        return ((self.__width + self.__height) * 2)
