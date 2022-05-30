@@ -9,24 +9,24 @@ class MyInt(int):
     Args:
         int ([type]): [description]
     """
-    def __eq__(self, other):
+    def __eq__(self, others):
         """[summary]
 
         Args:
-            other ([type]): [description]
+            others ([type]): [description]
 
         Returns:
             [type]: [description]
         """
-        return super().__ne__(other)
+        return super().__ne__(others)
 
-    def __ne__(self, other):
+    def __ne__(self, others):
         """[summary]
 
         Args:
-            other ([type]): [description]
+            others ([type]): [description]
 
         Returns:
             [type]: [description]
         """
-        return super().__eq__(other)
+        return super().__eq__(others)
