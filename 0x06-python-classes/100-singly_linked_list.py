@@ -91,11 +91,18 @@ class SinglyLinkedList:
         self.__head = None
 
     def sorted_insert(self, value):
-        """[summary]
-
-        Args:
-            value ([type]): [description]
         """
+        The sorted_insert function takes a value and inserts it into the linked list in order.
+        If the value is less than or equal to the current node, then it will be inserted at 
+        the head of the list. If not, then we iterate through until we find a node whose data 
+        is greater than our newNode's data.
+
+        :param self: Reference the class itself
+        :param value: Store the value of the new node to be inserted
+        :return: The head of the list after insertion
+        :doc-author: Trelent
+        """
+
         newNode = Node(value)
         current = self.__head
         if (not current or value < current.data):
@@ -109,11 +116,17 @@ class SinglyLinkedList:
             current.next_node = newNode
 
     def __str__(self):
-        """[summary]
-
-        Returns:
-            [type]: [description]
         """
+        The __str__ function is a special function that is called by the str()
+           built-in function and by the print statement to compute the &quot;informal&quot; string
+           representation of an object. This is usually the string that you would type to 
+           re-create this object.
+        
+        :param self: Refer to the object that is calling the method
+        :return: A string representation of the linked list
+        :doc-author: Trelent
+        """
+        
         res = ""
         current = self.__head
         while (current):
