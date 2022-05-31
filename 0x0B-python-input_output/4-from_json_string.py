@@ -11,10 +11,11 @@ def from_json_string(my_str):
     Parameters:
         my_str (str): A JSON string.
 
-        Returns: 
+        Returns:
             The Python object represented by the JSON string.
-        Examples: 
-            &gt;&gt;&gt; from_json_string('[&quot;foo&quot;, {&quot;bar&quot;:[&quot;baz&quot;,
+        Examples:
+            &gt;&gt;&gt; from_json_string('[&quot;foo&quot;,
+            {&quot;bar&quot;:[&quot;baz&quot;,
 
     :param my_str: Pass a string to the function
     :return: A list of dictionaries
