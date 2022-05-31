@@ -3,6 +3,7 @@
 """
 import contextlib
 
+
 def print_stats(size, status_codes):
     """
     The print_stats function prints the size of the file and
