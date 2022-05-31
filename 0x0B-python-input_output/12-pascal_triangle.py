@@ -3,8 +3,15 @@
 
 
 def pascal_triangle(n):
-    """Represent Pascal's Triangle of size n.
-    Returns a list of lists of integers representing the triangle.
+    """
+    The pascal_triangle function takes a single integer as
+    an argument and returns a list of lists containing the
+    Pascal's triangle up to the nth row.
+    If n is less than or equal to 0, an empty list will be returned.
+
+    :param n: Define the number of rows that will be printed
+    :return: A list of lists, where each list is a row in the triangle
+    :doc-author: Trelent
     """
     if n <= 0:
         return []
