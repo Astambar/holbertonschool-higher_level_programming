@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """[summary]
 """
-import contextlib
 
 
 def print_stats(size, status_codes):
@@ -22,7 +21,7 @@ def print_stats(size, status_codes):
     for key in sorted(status_codes):
         print(f"{key}: {status_codes[key]}")
 
-
+import contextlib
 if __name__ == "__main__":
     import sys
 
