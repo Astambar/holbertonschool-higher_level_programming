@@ -14,5 +14,5 @@ def to_json_string(my_obj):
     :return: A string representation of my_obj in json format
     :doc-author: Trelent
     """
-    
+
     return json.dumps(my_obj)
