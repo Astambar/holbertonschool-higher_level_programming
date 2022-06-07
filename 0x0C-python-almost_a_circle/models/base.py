@@ -19,15 +19,16 @@ class Base:
 
     def __init__(self, id=None):
         """
-        The __init__ function is called the constructor and is always called when creating an instance of a class.
-        It is used to initialize data attributes of an object. In this case, it initializes the id attribute.
-        
+        The __init__ function is called the constructor and
+        is always called when creating an instance of a class.
+        It is used to initialize data attributes of an object.
+        In this case, it initializes the id attribute.
         :param self: Refer to the current instance of the class
         :param id=None: Set the id of the object to a specific value
         :return: The object itself
         :doc-author: Trelent
         """
-        
+
         if id is not None:
             self.id = id
         else:
@@ -37,16 +38,19 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """
-        The save_to_file function writes a JSON string representation of the object
+        The save_to_file function writes
+        a JSON string representation of the object
         to a file.
-        
-        
-        :param cls: Call the to_json_string method from the class that is calling it
-        :param list_objs: Check if the list of objects is empty or not
+
+
+        :param cls: Call the to_json_string method
+        from the class that is calling it
+        :param list_objs: Check if the list
+        of objects is empty or not
         :return: None
         :doc-author: Trelent
         """
-        
+
         string = ""
 
         if list_objs is None:
@@ -63,16 +67,20 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """
-        The create function creates a new instance of the class,
-        and takes as arguments all attributes that are required to create an instance.
-        If one of the attributes is not passed in, it will default to None.
-        
+        The create function creates
+        a new instance of the class,
+        and takes as arguments all attributes
+        that are required to create an instance.
+        If one of the attributes is not passed in,
+        it will default to None.
+
         :param cls: Call the class rectangle or square
-        :param **dictionary: Update the attributes of the instance
+        :param **dictionary: Update
+        the attributes of the instance
         :return: The new object
         :doc-author: Trelent
         """
-        
+
         new = cls(1, 1) if cls.__name__ == "Rectangle" else cls(1)
 
         new.update(**dictionary)
@@ -82,14 +90,15 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """
-        The load_from_file function is a function that takes in a class and loads the data from the file
-        and returns an instance of it. If there is no file, then it will return an empty list.
-        
+        The load_from_file function is a function
+        that takes in a class and loads the data from the file
+        and returns an instance of it.
+        If there is no file, then it will return an empty list.
         :param cls: Call the class that is being used
         :return: A list of instances
         :doc-author: Trelent
         """
-        
+
         list_json = []
         list_instance = []
 
@@ -105,20 +114,21 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """
-        The save_to_file_csv function writes a list of objects to a csv file.
+        The save_to_file_csv function writes
+        a list of objects to a csv file.
             Args:
-                cls (class): The class name of the object being written to the file.
-                list_objs (list): A list of objects that will be written to the file.
-        
+                cls (class): The class name of
+                the object being written to the file.
+                list_objs (list): A list of objects
+                that will be written to the file.
             Returns:
                 None,
-        
         :param cls: Determine the name of the class
         :param list_objs: Save the list of objects to a file
         :return: None
         :doc-author: Trelent
         """
-        
+
         rectangle_list = ["id", "width", "height", "x", "y", "\0"]
         square_list = ["id", "size", "x", "y", "\0"]
         write_list = ""
@@ -144,16 +154,19 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """
-        The load_from_file_csv function creates a list of instances from a csv file.
-        The function takes the name of the class as an argument and creates an instance
-        of that class for each line in the csv file. The function returns a list with all 
+        The load_from_file_csv function creates
+        a list of instances from a csv file.
+        The function takes the name of the class
+        as an argument and creates an instance
+        of that class for each line in the csv file.
+        The function returns a list with all
         the new instances.
-        
+
         :param cls: Call the class name
         :return: The list of instances
         :doc-author: Trelent
         """
-        
+
         list_instance = []
 
         if exists(f"{cls.__name__}.csv"):
@@ -185,37 +198,38 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """
-        The to_json_string function converts a list of dictionaries into a json string.
+        The to_json_string function converts
+        a list of dictionaries into a json string.
             Args:
                 list_dictionaries (list): A list of dictionaries.
-        
             Returns:
                 str: The JSON string representation of the object.
-        
         :param list_dictionaries: Check if the list is empty or not
         :return: A string representation of the list_dictionaries parameter
         :doc-author: Trelent
         """
-        
+
         return "[]" if list_dictionaries is None else json.dumps(
                                                 list_dictionaries)
 
     @staticmethod
     def from_json_string(json_string):
         """
-        The from_json_string function converts a JSON string to a Python object.
-        
+        The from_json_string function
+        converts a JSON string to a Python object.
+
         Parameters:
-            json_string (str): A JSON string.  The value can be any Python-supported data type.
-        
+            json_string (str): A JSON string.
+            The value can be any Python-supported data type.
             Returns:
-                list, dict, str, int, float: A Python object constructed from the provided JSON string.
-        
+                list, dict, str, int, float: A Python object
+                constructed from the provided JSON string.
+
         :param json_string: Pass a string that contains a json object
         :return: A list of dictionaries
         :doc-author: Trelent
         """
-        
+
         return [] if json_string in [None, ""] else json.loads(json_string)
 
 

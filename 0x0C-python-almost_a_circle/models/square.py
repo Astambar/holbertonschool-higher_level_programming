@@ -16,9 +16,11 @@ class Square(Rectangle):
     """
     def __init__(self, size, x=0, y=0, id=None):
         """
-        The __init__ function is called automatically every time the class is being used to create a new object.
-        The init function can have arguments but the first one has to be self, which refers to the object itself.
-        
+        The __init__ function is called automatically every time
+        the class is being used to create a new object.
+        The init function can have arguments but the first
+        one has to be self, which refers to the object itself.
+
         :param self: Reference the class itself
         :param size: Define the size of the square
         :param x=0: Set the x coordinate of the rectangle
@@ -32,16 +34,19 @@ class Square(Rectangle):
 
     def __str__(self):
         """
-        The __str__ function is a special function that is called by the print()
-        command. It returns a string representation of the object. This is useful for
-        debugging and logging, but also allows objects to be used in place of strings!
-        
-        
+        The __str__ function is a special function
+        that is called by the print()
+        command. It returns a string representation
+        of the object. This is useful for
+        debugging and logging, but also allows
+        objects to be used in place of strings!
+
+
         :param self: Refer to the object itself
         :return: A string that can be printed
         :doc-author: Trelent
         """
-        
+
         return "[{:s}] ({:d}) {:d}/{:d} - {:d}".format(
             __class__.__name__,
             self.id,
@@ -54,16 +59,17 @@ class Square(Rectangle):
         """
         The update function accepts 4 arguments:
             id, size, x and y.
-            It changes the attributes of the object to match these values.
-        
-        
+            It changes the attributes of
+            the object to match these values.
+
+
         :param self: Refer to the object itself
         :param *args: Pass a non-keyworded, variable-length argument list
         :param **kwargs: Pass a keyworded, variable-length argument list
         :return: Nothing
         :doc-author: Trelent
         """
-        
+
         arg_list = ["id", "size", "x", "y", "\0"]
 
         if (len(args)):
@@ -76,7 +82,8 @@ class Square(Rectangle):
     def to_dictionary(self):
         """
         The to_dictionary function converts a list of lists into a dictionary.
-        The first element in the list is used as the key, and the second as value.
+        The first element in the list is used as
+        the key, and the second as value.
 
 
         :param self: Reference the class itself
