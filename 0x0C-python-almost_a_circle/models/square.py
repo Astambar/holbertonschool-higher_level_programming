@@ -81,7 +81,8 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """
-        The to_dictionary function converts a list of lists into a dictionary.
+        The to_dictionary function converts a
+        list of lists into a dictionary.
         The first element in the list is used as
         the key, and the second as value.
 
