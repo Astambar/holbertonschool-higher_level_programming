@@ -125,7 +125,7 @@ class Rectangle(Base):
         Args:
             value ([type]): [description]
         """
-        self.check_value("width", value)
+        self.see_value("width", value)
         self.__width = value
 
     @property
@@ -144,7 +144,7 @@ class Rectangle(Base):
         Args:
             value ([type]): [description]
         """
-        self.check_value("height", value)
+        self.see_value("height", value)
         self.__height = value
 
     @property
@@ -163,7 +163,7 @@ class Rectangle(Base):
         Args:
             value ([type]): [description]
         """
-        self.check_value("x", value)
+        self.see_value("x", value)
         self.__x = value
 
     @property
@@ -182,5 +182,5 @@ class Rectangle(Base):
         Args:
             value ([type]): [description]
         """
-        self.check_value("y", value)
+        self.see_value("y", value)
         self.__y = value
