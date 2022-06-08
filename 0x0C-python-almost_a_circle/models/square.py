@@ -5,7 +5,7 @@ Returns:
     [type]: [description]
 """
 
-from rectangle import Rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
@@ -93,3 +93,15 @@ class Square(Rectangle):
         """
 
         return {'id': self.id, 'x': self.x, 'y': self.y, 'size': self.size}
+if __name__ == "__main__":
+
+    s1 = Square(5)
+    print(s1)
+    print(s1.size)
+    s1.size = 10
+    print(s1)
+
+    try:
+        s1.size = "9"
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
