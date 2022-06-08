@@ -76,8 +76,8 @@ class Square(Rectangle):
             for i in range(len(args)):
                 setattr(self, arg_list[i], args[i])
 
-        for k, v in kwargs.items():
-            setattr(self, k, v)
+        for key, value in kwargs.items():
+            setattr(self, key, value)
 
     def to_dictionary(self):
         """
@@ -93,6 +93,47 @@ class Square(Rectangle):
         """
 
         return {'id': self.id, 'x': self.x, 'y': self.y, 'size': self.size}
+
+    @property
+    def size(self):
+        """
+        The size function returns the number of nodes in a linked list.
+
+        Parameters:
+            self (LinkedList): The current object referencing this method.
+
+            Returns:
+                int: The size of the linked list.
+
+            Examples:
+
+                &gt;&gt;&gt; ll = LinkedList() # Create a new
+
+        :param self: Represent the instance of the object itself
+        :return: The number of nodes in the linked list
+        :doc-author: Trelent
+        """
+
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        The size function sets the width of the rectangle.
+
+
+
+        :param self: Access variables that belongs to the class
+        :param value: Set the width of the rectangle
+        :return: The width of the rectangle
+        :doc-author: Trelent
+        """
+
+        self.see_value("width", value)
+        self.width = value
+        self.height = value
+
+
 if __name__ == "__main__":
 
     s1 = Square(5)

@@ -46,7 +46,7 @@ class Rectangle(Base):
             self.height
             )
 
-    def check_value(self, name, value):
+    def see_value(self, name, value):
         """[summary]
 
         Args:
@@ -92,7 +92,6 @@ class Rectangle(Base):
         """[summary]
         """
         rectangle_list = ["id", "width", "height", "x", "y", "\0"]
-
         for i in range(len(args)):
             setattr(self, rectangle_list[i], args[i])
 
