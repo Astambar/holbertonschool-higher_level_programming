@@ -1,2 +1,3 @@
--- script that removes all records with a score <= 5 in the table second_table of the database hbtn_0c_0
+-- script qui supprime tous les enregistrements avec un score <= 5
+-- dans la table second_table de la base de données hbtn_0c_0
 DELETE FROM second_table WHERE score <= 5;

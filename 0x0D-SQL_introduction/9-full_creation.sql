@@ -1,5 +1,5 @@
--- script that creates a table second_table in the database hbtn_0c_0
--- add multiples rows:
+-- script qui crée une table second_table dans la base de données hbtn_0c_0
+-- ajouter plusieurs lignes :
 --		     id INT
 --    		     name VARCHAR(256)
 --                   score INT

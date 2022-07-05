@@ -1,2 +1,3 @@
--- script that lists all records of the table second_table of the database hbtn_0c_0
+-- script qui liste tous les enregistrements
+-- de la table second_table de la base de données hbtn_0c_0
 SELECT score, name FROM second_table ORDER BY score DESC;

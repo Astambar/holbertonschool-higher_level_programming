@@ -1,3 +1,3 @@
--- script that displays the number of records with id = 89 in the table
--- first_table of the database hbtn_0c_0
+-- script qui affiche le nombre d'enregistrements avec id = 89 dans la table
+-- first_table de la base de données hbtn_0c_0
 SELECT COUNT(*) FROM first_table WHERE id = 89;
