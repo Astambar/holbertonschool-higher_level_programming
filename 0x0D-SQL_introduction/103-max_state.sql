@@ -1,4 +1,5 @@
--- script that displays the top 3 of cities temperature during July and August ordered by temperature (descending)
+-- script qui affiche le top 3 des températures des
+-- villes en juillet et août classés par température (décroissant)
 SELECT `state`, MAX(`value`) AS `max_temp`
 FROM `temperatures`
 GROUP BY `state`
