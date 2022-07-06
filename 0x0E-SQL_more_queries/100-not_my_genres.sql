@@ -1,5 +1,5 @@
---  script that uses the hbtn_0d_tvshows database to list all genres not linked to the show Dexter
---  script that uses the hbtn_0d_tvshows database to list all genres not linked to the show Dexte
+-- script qui utilise la base de données hbtn_0d_tvshows pour lister
+-- tous les genres non liés à l'émission Dexter
 SELECT tv_genres.name
 FROM tv_genres
 WHERE tv_genres.name NOT IN
