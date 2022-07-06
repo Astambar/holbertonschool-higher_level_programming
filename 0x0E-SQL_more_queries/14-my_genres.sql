@@ -1,5 +1,5 @@
--- script créer la database puis génére la table
--- script that uses the hbtn_0d_tvshows database to lists all genres of the show Dexter
+-- script qui utilise la base de données
+-- hbtn_0d_tvshows pour lister tous les genres de l'émission Dexter
 SELECT `tv_genres`.`name` FROM `tv_genres`
     JOIN `tv_show_genres` ON `tv_genres`.`id` = `tv_show_genres`.`genre_id`
     JOIN `tv_shows` ON `tv_show_genres`.`show_id` = `tv_shows`.`id`
