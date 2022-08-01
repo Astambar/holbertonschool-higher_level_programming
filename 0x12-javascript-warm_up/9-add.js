@@ -1,4 +1,5 @@
 #!/usr/bin/node
+//comment
 function add (a, b) {
     if (Number.isNaN(a, b)) {
       console.log('NaN');

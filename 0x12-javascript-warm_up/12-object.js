@@ -1,4 +1,5 @@
 #!/usr/bin/node
+//comment
 const myObject = {
     type: 'object',
     value: 12

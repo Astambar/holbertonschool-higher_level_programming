@@ -1,4 +1,5 @@
 #!/usr/bin/node
+//comment
 function factorial (x) {
     let result = 1;
     if (x > 0) {
