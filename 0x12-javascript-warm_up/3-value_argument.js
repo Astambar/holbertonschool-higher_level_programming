@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//comment
+// comment
 const args = process.argv;
 if (args[2] != null) {
   console.log(args[2]);

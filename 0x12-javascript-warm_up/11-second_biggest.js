@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//comment
+// comment
 const args = process.argv;
 const x = args.length;
 let max = parseInt(args[2]);

@@ -1,4 +1,4 @@
 #!/usr/bin/node
-//comment
+// comment
 const myVar = 'JavaScript is amazing';
 console.log(myVar);

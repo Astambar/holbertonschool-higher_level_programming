@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//comment
+// comment
 const args = process.argv;
 if (args.length <= 2) {
   console.log('No argument');

@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//comment
+// comment
 exports.add = function (a, b) {
-    return a + b;
-  };
+  return a + b;
+};
