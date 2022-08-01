@@ -1,6 +1,6 @@
 #!/usr/bin/node
 // comment
-const myObject = {
+let myObject = {
   type: 'object',
   value: 12
 };
