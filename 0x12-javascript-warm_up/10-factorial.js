@@ -1,5 +1,4 @@
-#!/usr/bin/env node
-
+#!/usr/bin/node
 function factorial (x) {
     let result = 1;
     if (x > 0) {

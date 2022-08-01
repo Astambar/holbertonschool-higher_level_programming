@@ -1,5 +1,4 @@
-#!/usr/bin/env node
-
+#!/usr/bin/node
 function add (a, b) {
     if (Number.isNaN(a, b)) {
       console.log('NaN');

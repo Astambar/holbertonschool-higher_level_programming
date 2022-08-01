@@ -1,5 +1,4 @@
-#!/usr/bin/env node
-
+#!/usr/bin/node
 const args = process.argv;
 if (args[2] != null) {
   console.log(args[2]);
