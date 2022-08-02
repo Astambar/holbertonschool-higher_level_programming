@@ -1,9 +1,14 @@
 #!/usr/bin/node
-// comment
-const args = process.argv;
-const x = parseInt(args[2]);
-if (Number.isNaN(x)) {
-  console.log('Not a number');
-} else {
-  console.log('My number: ' + args[2]);
+/*
+class Square that defines a square and inherits
+from Rectangle of 4-rectangle.js
+*/
+const Rectangle = require('./4-rectangle');
+
+class Square extends Rectangle {
+  constructor (size) {
+    super(size, size);
+  }
 }
+
+module.exports = Square;

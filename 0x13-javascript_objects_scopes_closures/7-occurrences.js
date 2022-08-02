@@ -1,11 +1,13 @@
 #!/usr/bin/node
-// comment
-const args = process.argv;
-const x = parseInt(args[2]);
-if (Number.isNaN(x)) {
-  console.log('Missing number of occurrences');
-} else {
-  for (let i = 0; i < x; i++) {
-    console.log('C is fun');
+/*
+function that returns the number of occurrences in a list
+*/
+exports.nbOccurences = function (list, searchElement) {
+  let count = 0;
+
+  for (let i = 0; list[i]; i++) {
+    if (list[i] === searchElement) { count += 1; }
   }
-}
+
+  return count;
+};

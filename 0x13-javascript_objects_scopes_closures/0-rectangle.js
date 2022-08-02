@@ -1,4 +1,9 @@
 #!/usr/bin/node
-const myVar = 'JavaScript is amazing'; // string
+/*
+empty class Rectangle that defines a rectangle
+*/
+class Rectangle {
 
-console.log(myVar); // console.log(myVar) will print 'JavaScript is amazing'
+}
+
+module.exports = Rectangle;

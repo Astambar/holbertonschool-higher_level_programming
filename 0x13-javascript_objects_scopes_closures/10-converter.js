@@ -1,11 +1,10 @@
 #!/usr/bin/node
-// comment
-function factorial (x) {
-  let result = 1;
-  if (x > 0) {
-    result = factorial(x - 1) * x;
-  }
-  return result;
-}
-const args = process.argv;
-console.log(factorial(parseInt(args[2])));
+/*
+function that converts a number from base 10
+to another base passed as argument
+*/
+exports.converter = function (base) {
+  return function (nb) {
+    return nb.toString(base);
+  };
+};
