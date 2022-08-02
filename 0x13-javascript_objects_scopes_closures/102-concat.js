@@ -1,6 +1,6 @@
 #!/usr/bin/node
 /*
-script that concats 2 files
+script qui concatène 2 fichiers
 */
 const fs = require('fs');
 

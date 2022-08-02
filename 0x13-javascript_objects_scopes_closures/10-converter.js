@@ -1,7 +1,7 @@
 #!/usr/bin/node
 /*
-function that converts a number from base 10
-to another base passed as argument
+fonction qui convertit un nombre en base 10
+à une autre base passée en argument
 */
 exports.converter = function (base) {
   return function (nb) {

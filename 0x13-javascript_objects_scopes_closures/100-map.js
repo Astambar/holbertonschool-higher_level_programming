@@ -1,6 +1,6 @@
 #!/usr/bin/node
 /*
-script that imports an array and computes a new array
+script qui importe un tableau et calcule un nouveau tableau
 */
 const list = require('./100-data.js').list;
 const mapList = [];

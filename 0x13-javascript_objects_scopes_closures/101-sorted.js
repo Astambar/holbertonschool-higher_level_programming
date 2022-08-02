@@ -1,7 +1,7 @@
 #!/usr/bin/node
 /*
-script that imports a dictionary of occurrences by user id
-and computes a dictionary of user ids by occurrence
+script qui importe un dictionnaire d'occurrences par identifiant d'utilisateur
+et calcule un dictionnaire d'identifiants d'utilisateurs par occurrence
 */
 const dict = require('./101-data.js').dict;
 const newDict = {};

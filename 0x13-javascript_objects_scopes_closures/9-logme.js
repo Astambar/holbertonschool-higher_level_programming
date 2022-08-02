@@ -1,7 +1,7 @@
 #!/usr/bin/node
 /*
-function that prints the number of arguments
-already printed and the new argument value
+fonction qui imprime le nombre d'arguments
+déjà imprimé et la nouvelle valeur d'argument
 */
 exports.logMe = function (item) {
   console.log(count + ': ' + item);

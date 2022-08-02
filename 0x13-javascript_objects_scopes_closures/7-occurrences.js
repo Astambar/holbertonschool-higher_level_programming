@@ -1,6 +1,6 @@
 #!/usr/bin/node
 /*
-function that returns the number of occurrences in a list
+fonction qui renvoie le nombre d'occurrences dans une liste
 */
 exports.nbOccurences = function (list, searchElement) {
   let count = 0;

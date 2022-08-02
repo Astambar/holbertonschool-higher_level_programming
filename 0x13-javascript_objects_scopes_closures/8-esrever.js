@@ -1,6 +1,6 @@
 #!/usr/bin/node
 /*
-function that returns the reversed version of a list
+fonction qui renvoie la version inversée d'une liste
 */
 exports.esrever = function (list) {
   const output = [];

@@ -1,7 +1,7 @@
 #!/usr/bin/node
 /*
-class Square that defines a square and inherits
-from Rectangle of 4-rectangle.js
+la classe Carré qui définit un carré et hérite
+de Rectangle de 4-rectangle.js
 */
 const Rectangle = require('./4-rectangle');
 
@@ -13,8 +13,8 @@ class Square extends Rectangle {
   charPrint (c) {
     if (!c) { c = 'X'; }
 
-    for (let y = 0; y < this.height; y++) {
-      for (let x = 0; x < this.width; x++) {
+    for (let i = 0; i < this.height; i++) {
+      for (let j = 0; j < this.width; j++) {
         process.stdout.write(c);
       }
       process.stdout.write('\n');

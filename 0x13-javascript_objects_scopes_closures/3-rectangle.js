@@ -1,6 +1,6 @@
 #!/usr/bin/node
 /*
-class Rectangle that defines a rectangle
+classe Rectangle qui définit un rectangle
 */
 class Rectangle {
   constructor (w, h) {
@@ -11,8 +11,8 @@ class Rectangle {
   }
 
   print () {
-    for (let y = 0; y < this.height; y++) {
-      for (let x = 0; x < this.width; x++) {
+    for (let i = 0; i < this.height; i++) {
+      for (let j = 0; j < this.width; j++) {
         process.stdout.write('X');
       }
       process.stdout.write('\n');
