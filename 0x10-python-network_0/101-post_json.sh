@@ -1,3 +1,3 @@
 #!/bin/bash
-#Create a curl requests that send a Json file
+#Créer des requêtes curl qui envoient un fichier Json
 curl -sX POST -H "Content-Type: application/json" --data @"$2" "$1"
