@@ -5,10 +5,8 @@ import sys
 
 
 if __name__ == "__main__":
-    res = requests.get('https://api.github.com/repos/{}/{}/commits'.format(
-        sys.argv[2],
-        sys.argv[1])
-    )
+    res = requests.get(f'https://api.github.com/repos/{sys.argv[2]}/{sys.argv[1]}/commits')
+
     if res.status_code >= 400:
         print('None')
     else:
