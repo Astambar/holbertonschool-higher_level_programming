@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Script Python qui envoie une requête à l'URL'''
+'''Python script that sends a request to the URL'''
 import requests
 import sys
 
@@ -10,4 +10,7 @@ if __name__ == "__main__":
         print('None')
     else:
         for comment in res.json()[:10]:
-            print(f"{comment.get('sha')}: {comment.get('commit').get('author').get('name')}")
+            print("{}: {}".format(
+                comment.get('sha'),
+                comment.get('commit').get('author').get('name'))
+            )
