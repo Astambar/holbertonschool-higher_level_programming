@@ -29,7 +29,8 @@ class TestBase(unittest.TestCase):
         test_too_many_arguments (no-working test):
             too many arguments given
     """
-
+    def setUp(self):
+        Base._Base__nb_objects = 0
     def test_documentation(self):
         """test all documentation of module"""
         # module documentation
@@ -70,18 +71,18 @@ class TestBase(unittest.TestCase):
     def test_many_created(self):
         """fuction that test for good assignment of differents id value"""
         b1 = Base()
-        b2 = Base(None)
-        b3 = Base(12)
-        b4 = Base()
-        b5 = Base(-3)
-        b6 = Base(2)
+        b2 = Base()
+        b3 = Base()
+        b4 = Base(12)
+        b5 = Base()
+        b6 = Base(-7)
 
         self.assertEqual(b1.id, 1)
         self.assertEqual(b2.id, 2)
-        self.assertEqual(b3.id, 12)
-        self.assertEqual(b4.id, 3)
-        self.assertEqual(b5.id, -3)
-        self.assertEqual(b6.id, 2)
+        self.assertEqual(b3.id, 3)
+        self.assertEqual(b4.id, 12)
+        self.assertEqual(b5.id, 4)
+        self.assertEqual(b6.id, -7)
 
     def test_too_many_arguments(self):
         """
