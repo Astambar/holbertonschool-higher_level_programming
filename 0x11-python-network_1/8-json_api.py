@@ -17,6 +17,6 @@ if __name__ == "__main__":
         if id is None or name is None:
             print("No result")
         else:
-            print("[{}] {}".format(id, name))
+            print(f"[{id}] {name}")
     except Exception:
         print("Not a valid JSON")
