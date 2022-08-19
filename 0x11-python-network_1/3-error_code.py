@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Python script that sends a request to the URL'''
+'''Script Python qui envoie une requête à l'URL'''
 import sys
 import urllib.request
 
