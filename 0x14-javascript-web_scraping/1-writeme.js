@@ -13,5 +13,5 @@ fs.writeFile(process.argv[2], process.argv[3], 'utf-8', (err, data) => {
   
     // Converting Raw Buffer to text
     // data using tostring function.
-    console.log(err);
+    return console.log(err);
 })
