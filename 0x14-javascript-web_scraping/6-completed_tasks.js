@@ -10,18 +10,18 @@ axios({
   url: process.argv[2]
 })
   .then((response) => {
-    const dictTask = {};
+    const dictionaryTask = {};
     let val;
     const data = response.data;
     for ([, val] of Object.entries(data)) {
       if (val.completed === true) {
-        if (dictTask[val.userId] === undefined) {
-          dictTask[val.userId] = 0;
+        if (dictionaryTask[val.userId] === undefined) {
+			dictionaryTask[val.userId] = 0;
         }
-        dictTask[val.userId] += 1;
+        dictionaryTask[val.userId] += 1;
       }
     }
-    console.log(dictTask);
+    console.log(dictionaryTask);
   }, (error) => {
     console.log('code : ' + error.response.status);
   });
