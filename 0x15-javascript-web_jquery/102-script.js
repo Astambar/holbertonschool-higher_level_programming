@@ -1,7 +1,7 @@
 #!/usr/bin/node
 /*
-JavaScript script that fetches and prints how to say “Hello”
-depending on the language
+Script JavaScript qui récupère et imprime comment dire "Bonjour"
+selon la langue
 */
 import fetch from 'node-fetch';
 

@@ -1,7 +1,9 @@
 #!/usr/bin/node
 /*
-JavaScript script that adds, removes and clears LI elements
-from a list when the user clicks
+Script qui permet d'ajouter des élément <li>Item</li> avec la commande:
+add_item
+permet aussi de suprimer le dernière élément générer avec remove_item
+et de supprimer tout les  items avec clear_list
 */
 
 const $JQ = window.$;

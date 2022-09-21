@@ -1,12 +1,11 @@
 #!/usr/bin/node
 /*
-JavaScript script that fetches from
-https://fourtonfish.com/hellosalut/?lang=fr
-and displays the value of hello from that fetch in the HTML tag DIV#hello
+Script qui affiche la valeur de hello de l'url: https://fourtonfish.com/hellosalut/?lang=fr
+ dans l'id nommé hello
 */
-const $ = window.$;
-$(document).ready(function () {
-  $.get('https://fourtonfish.com/hellosalut/?lang=fr', function (data) {
-    $('#hello').append(data.hello);
+const $JQ = window.$;
+$JQ(document).ready(() => {
+  $JQ.get('https://fourtonfish.com/hellosalut/?lang=fr',(dataHellosalut) => {
+    $JQ('#hello').append(dataHellosalut.hello);
   });
 });
